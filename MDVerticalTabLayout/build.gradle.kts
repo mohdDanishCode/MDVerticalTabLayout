@@ -38,6 +38,13 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
 
 dependencies {
@@ -57,3 +64,6 @@ dependencies {
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.31.2-alpha")
 
 }
+
+
+
