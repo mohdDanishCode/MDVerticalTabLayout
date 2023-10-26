@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("maven-publish")
 }
 
 android {
@@ -62,8 +63,18 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.7.4")
     implementation("io.coil-kt:coil-compose:2.4.0")
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.31.2-alpha")
-
 }
 
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.github.mohdDanishCode"
+            artifactId = "MDVerticalTabLayout"
+            version = "0.0.8"
 
-
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+}
