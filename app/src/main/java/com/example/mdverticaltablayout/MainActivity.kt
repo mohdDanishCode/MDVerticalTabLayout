@@ -59,7 +59,7 @@ fun Greeting() {
             indicatorColor = Color(0xFF2C8335),
             gradientFirstColor = Color(0xFFE9FFEB),
             gradientSecondColor = Color(0xFF47C253),
-        ) {
+        ) {categoryItem->
         }
     }
 }
